@@ -1,5 +1,6 @@
 {
   "name": "wyrihaximus/react-event-loop-inspector",
+  "description": "Inspect react/* packages for metrics and other insights                               ",
   "license": "MIT",
   "authors": [
     {

@@ -27,7 +27,8 @@
   },
   "suggest": {
     "wyrihaximus/react-inspector-event-loop": "Measure what is going through the event loop",
-    "wyrihaximus/react-inspector-f42": "Measure what is going through fread/fwrite methods"
+    "wyrihaximus/react-inspector-f42": "Measure what is going through fread/fwrite calls from react/stream",
+    "wyrihaximus/react-inspector-f42-bunny": "Measure what is going through fread/fwrite calls from bunny/bunny"
   },
   "config": {
     "sort-packages": true,

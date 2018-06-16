@@ -10,15 +10,20 @@
     }
   ],
   "require": {
-    "php": "^7.0"
+    "php": "^7.2",
+    "igorw/get-in": "^1.0",
+    "joshdifabio/composed": "^1.0",
+    "reactivex/rxphp": "^2.0",
+    "wyrihaximus/get-in-packages-composer.jason": "dev-master"
   },
   "require-dev": {
-    "api-clients/test-utilities": "^4.2"
+    "api-clients/test-utilities": "^5.0"
   },
   "autoload": {
     "psr-4": {
       "WyriHaximus\\React\\Inspector\\": "src/"
-    }
+    },
+    "files": ["src/bootstrap_include.php"]
   },
   "autoload-dev": {
     "psr-4": {
@@ -26,6 +31,7 @@
     }
   },
   "suggest": {
+    "wyrihaximus/react-inspector-cpu-usage": "Measure the CPU usage of your application and it's child processes",
     "wyrihaximus/react-inspector-event-loop": "Measure what is going through the event loop",
     "wyrihaximus/react-inspector-stream": "Measure what is going through fread/fwrite calls from react/stream",
     "wyrihaximus/react-inspector-bunny": "Measure what is going through fread/fwrite calls from bunny/bunny"
@@ -33,7 +39,17 @@
   "config": {
     "sort-packages": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.2"
+    }
+  },
+  "extra": {
+    "react-inspector": {
+      "metrics": [
+        "etc/config/app.php",
+        "etc/config/bunny.php",
+        "etc/config/http-server.php",
+        "etc/config/supervisor.php"
+      ]
     }
   },
   "scripts": {

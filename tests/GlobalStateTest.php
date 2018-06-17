@@ -12,6 +12,14 @@ final class GlobalStateTest extends TestCase
         GlobalState::clear();
     }
 
+    public function testBootstrappedState()
+    {
+        GlobalState::bootstrap();
+        self::assertSame([
+            'inspector.metrics' => 0,
+        ], GlobalState::get());
+    }
+
     public function testGlobalState()
     {
         self::assertSame([], GlobalState::get());

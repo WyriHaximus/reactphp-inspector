@@ -45,11 +45,13 @@
   "extra": {
     "react-inspector": {
       "metrics": [
-        "etc/config/app.php",
-        "etc/config/bunny.php",
-        "etc/config/http-server.php",
-        "etc/config/supervisor.php"
-      ]
+        "inspector.metrics"
+      ],
+      "reset": {
+        "ticks": [
+          "inspector.metrics"
+        ]
+      }
     }
   },
   "scripts": {

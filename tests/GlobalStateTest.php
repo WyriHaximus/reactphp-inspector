@@ -7,6 +7,11 @@ use WyriHaximus\React\Inspector\GlobalState;
 
 final class GlobalStateTest extends TestCase
 {
+    public function setUp()
+    {
+        GlobalState::clear();
+    }
+
     public function testGlobalState()
     {
         self::assertSame([], GlobalState::get());

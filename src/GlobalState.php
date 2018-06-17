@@ -10,7 +10,16 @@ final class GlobalState
 
     public static function bootstrap(): void
     {
-        self::$state = iterator_to_array(from_get_in_packages_composer('extra.react-inspector.metrics'));
+        self::$state = array_fill_keys(
+            array_values(
+                iterator_to_array(
+                    from_get_in_packages_composer(
+                        'extra.react-inspector.metrics'
+                    )
+                )
+            ),
+            0
+        );
     }
 
     public static function get(): array

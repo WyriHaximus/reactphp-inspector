@@ -14,7 +14,8 @@
     "igorw/get-in": "^1.0",
     "joshdifabio/composed": "^1.0",
     "reactivex/rxphp": "^2.0",
-    "wyrihaximus/get-in-packages-composer.jason": "dev-master"
+    "wyrihaximus/get-in-packages-composer.jason": "dev-master",
+    "wyrihaximus/ticking-promise": "^1.6"
   },
   "require-dev": {
     "api-clients/test-utilities": "^5.0"

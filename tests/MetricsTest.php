@@ -4,10 +4,10 @@ namespace WyriHaximus\React\Tests\Inspector;
 
 use PHPUnit\Framework\TestCase;
 use React\EventLoop\Factory;
-use function Clue\React\Block\await;
 use WyriHaximus\React\Inspector\GlobalState;
 use WyriHaximus\React\Inspector\Metric;
 use WyriHaximus\React\Inspector\Metrics;
+use function Clue\React\Block\await;
 use function WyriHaximus\React\timedPromise;
 
 final class MetricsTest extends TestCase

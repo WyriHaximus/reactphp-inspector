@@ -11,10 +11,8 @@
   ],
   "require": {
     "php": "^7.2",
-    "igorw/get-in": "^1.0",
-    "joshdifabio/composed": "^1.0",
     "reactivex/rxphp": "^2.0",
-    "wyrihaximus/get-in-packages-composer.jason": "dev-master",
+    "wyrihaximus/get-in-packages-composer.jason": "^1.0",
     "wyrihaximus/ticking-promise": "^1.6"
   },
   "require-dev": {

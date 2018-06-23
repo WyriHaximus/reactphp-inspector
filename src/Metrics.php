@@ -9,7 +9,7 @@ use Rx\ObserverInterface;
 use Rx\Subject\Subject;
 use function WyriHaximus\get_in_packages_composer;
 
-final class Metrics extends Subject
+final class Metrics extends Subject implements MetricsStreamInterface
 {
     /**
      * @var LoopInterface

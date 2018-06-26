@@ -65,6 +65,7 @@ final class Metrics extends Subject implements MetricsStreamInterface
     {
         if ($this->timer === null) {
             $this->timer = $this->loop->addPeriodicTimer($this->interval, function () {
+                $this->setMemoryMetrics();
                 $this->tick();
             });
         }
@@ -81,6 +82,14 @@ final class Metrics extends Subject implements MetricsStreamInterface
                 }
             }
         }
+    }
+
+    private function setMemoryMetrics()
+    {
+        GlobalState::set('memory.external',memory_get_usage(true));
+        GlobalState::set('memory.external_peak', memory_get_peak_usage(true));
+        GlobalState::set('memory.internal', memory_get_usage());
+        GlobalState::set('memory.internal_peak', memory_get_peak_usage());
     }
 
     private function tick()

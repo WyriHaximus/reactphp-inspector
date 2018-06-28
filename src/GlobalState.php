@@ -18,7 +18,7 @@ final class GlobalState
                     )
                 )
             ),
-            0
+            0.0
         );
     }
 
@@ -30,7 +30,7 @@ final class GlobalState
     public static function reset(): void
     {
         foreach (self::$state as $key => $value) {
-            self::$state[$key] = 0;
+            self::$state[$key] = 0.0;
         }
     }
 
@@ -39,24 +39,24 @@ final class GlobalState
         self::$state = [];
     }
 
-    public static function set(string $key, int $value): void
+    public static function set(string $key, float $value): void
     {
         self::$state[$key] = $value;
     }
 
-    public static function incr(string $key, int $value = 1): void
+    public static function incr(string $key, float $value = 1): void
     {
         if (!isset(self::$state[$key])) {
-            self::$state[$key] = 0;
+            self::$state[$key] = 0.0;
         }
 
         self::$state[$key] += $value;
     }
 
-    public static function decr(string $key, int $value = 1): void
+    public static function decr(string $key, float $value = 1): void
     {
         if (!isset(self::$state[$key])) {
-            self::$state[$key] = 0;
+            self::$state[$key] = 0.0;
         }
 
         self::$state[$key] -= $value;

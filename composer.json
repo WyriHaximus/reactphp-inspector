@@ -11,6 +11,7 @@
   ],
   "require": {
     "php": "^7.2",
+    "api-clients/rx": "^2.2",
     "reactivex/rxphp": "^2.0",
     "wyrihaximus/get-in-packages-composer.jason": "^1.0",
     "wyrihaximus/ticking-promise": "^1.6"
@@ -43,6 +44,9 @@
   },
   "extra": {
     "react-inspector": {
+      "collectors": {
+        "WyriHaximus\\React\\Inspector\\Collector": "src/Collector"
+      },
       "metrics": [
         "inspector.metrics"
       ],

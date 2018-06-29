@@ -20,16 +20,15 @@ final class Metric
     private $time;
 
     /**
-     * Metric constructor.
      * @param string $key
      * @param float  $value
      * @param float  $time
      */
-    public function __construct(string $key, float $value, float $time)
+    public function __construct(string $key, float $value, float $time = null)
     {
         $this->key = $key;
         $this->value = $value;
-        $this->time = $time;
+        $this->time = $time ?? microtime(true);
     }
 
     public function __toString(): string

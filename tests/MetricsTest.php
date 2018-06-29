@@ -33,22 +33,10 @@ final class MetricsTest extends TestCase
         await(timedPromise($loop, 5), $loop, 10);
         $end = microtime(true);
 
-        self::assertCount(20, $metricsCollection);
+        self::assertCount(4, $metricsCollection);
         /** @var Metric $metric */
         foreach ($metricsCollection as $index => $metric) {
-            self::assertTrue(
-                in_array(
-                    $metric->getKey(),
-                    [
-                        'inspector.metrics',
-                        'memory.external',
-                        'memory.external_peak',
-                        'memory.internal',
-                        'memory.internal_peak',
-                    ],
-                    true
-                )
-            );
+            self::assertSame('inspector.metrics', $metric->getKey());
             self::assertTrue(
                 $begin < $metric->getTime() &&
                 $end > $metric->getTime()
@@ -56,8 +44,8 @@ final class MetricsTest extends TestCase
         }
 
         self::assertSame(0.0, $metricsCollection[0]->getValue());
-        self::assertSame(5.0, $metricsCollection[5]->getValue());
-        self::assertSame(5.0, $metricsCollection[10]->getValue());
-        self::assertSame(5.0, $metricsCollection[15]->getValue());
+        self::assertSame(1.0, $metricsCollection[1]->getValue());
+        self::assertSame(1.0, $metricsCollection[2]->getValue());
+        self::assertSame(1.0, $metricsCollection[3]->getValue());
     }
 }

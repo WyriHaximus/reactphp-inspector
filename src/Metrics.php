@@ -89,7 +89,6 @@ final class Metrics extends Subject implements MetricsStreamInterface
                 })->subscribe(function (Metric $metric) {
                     GlobalState::set($metric->getKey(), $metric->getValue());
                 });
-                $this->setMemoryMetrics();
                 $this->tick();
             });
         }
@@ -131,14 +130,6 @@ final class Metrics extends Subject implements MetricsStreamInterface
                 }
             }
         }
-    }
-
-    private function setMemoryMetrics()
-    {
-        GlobalState::set('memory.external', memory_get_usage(true));
-        GlobalState::set('memory.external_peak', memory_get_peak_usage(true));
-        GlobalState::set('memory.internal', memory_get_usage());
-        GlobalState::set('memory.internal_peak', memory_get_peak_usage());
     }
 
     private function tick()

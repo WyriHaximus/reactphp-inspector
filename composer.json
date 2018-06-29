@@ -33,6 +33,7 @@
   "suggest": {
     "wyrihaximus/react-inspector-cpu-usage": "Measure the CPU usage of your application and it's child processes",
     "wyrihaximus/react-inspector-event-loop": "Measure what is going through the event loop",
+    "wyrihaximus/react-inspector-memory-usage": "Message the memory usage of the current PHP process",
     "wyrihaximus/react-inspector-stream": "Measure what is going through fread/fwrite calls from react/stream",
     "wyrihaximus/react-inspector-bunny": "Measure what is going through fread/fwrite calls from bunny/bunny"
   },

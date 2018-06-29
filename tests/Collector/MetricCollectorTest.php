@@ -4,7 +4,6 @@ namespace WyriHaximus\React\Tests\Inspector\Collector;
 
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
-use Rx\Observable;
 use Rx\React\Promise;
 use WyriHaximus\React\Inspector\Collector\MetricCollector;
 use WyriHaximus\React\Inspector\GlobalState;

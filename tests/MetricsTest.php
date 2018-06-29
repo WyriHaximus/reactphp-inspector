@@ -45,7 +45,8 @@ final class MetricsTest extends TestCase
                         'memory.external_peak',
                         'memory.internal',
                         'memory.internal_peak',
-                    ], true
+                    ],
+                    true
                 )
             );
             self::assertTrue(

@@ -8,13 +8,6 @@ use Rx\ObservableInterface;
 interface CollectorInterface
 {
     /**
-     * Create an instance, only an accepts an loop because the Metrics class only knows about the loop.
-     *
-     * @param LoopInterface $loop
-     */
-    public function __construct(LoopInterface $loop);
-
-    /**
      * Request a array of metrics.
      *
      * @return ObservableInterface<Metric[]>

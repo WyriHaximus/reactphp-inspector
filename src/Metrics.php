@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\React\Inspector;
 
+use Psr\Container\ContainerInterface;
 use React\EventLoop\LoopInterface;
 use React\EventLoop\TimerInterface;
 use Rx\DisposableInterface;
@@ -49,15 +50,22 @@ final class Metrics extends Subject implements MetricsStreamInterface
     private $activeCollectors = [];
 
     /**
-     * @param LoopInterface $loop
-     * @param string[]      $resetGroups
-     * @param float         $interval
+     * @var ContainerInterface
      */
-    public function __construct(LoopInterface $loop, array $resetGroups, float $interval)
+    private $container;
+
+    /**
+     * @param LoopInterface      $loop
+     * @param string[]           $resetGroups
+     * @param float              $interval
+     * @param ContainerInterface $container
+     */
+    public function __construct(LoopInterface $loop, array $resetGroups, float $interval, ContainerInterface $container = null)
     {
         $this->loop = $loop;
         $this->resetGroups = $resetGroups;
         $this->interval = $interval;
+        $this->container = $container;
 
         $this->setUpResetGroups();
         $this->gatherCollectors();
@@ -110,6 +118,11 @@ final class Metrics extends Subject implements MetricsStreamInterface
     private function setUpCollectors(): void
     {
         foreach ($this->collectors as $class) {
+            if ($this->container instanceof ContainerInterface) {
+                $this->activeCollectors[] = $this->container->get($class);
+                continue;
+            }
+
             $this->activeCollectors[] = new $class($this->loop);
         }
     }

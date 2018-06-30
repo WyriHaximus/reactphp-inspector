@@ -12,6 +12,7 @@
   "require": {
     "php": "^7.2",
     "api-clients/rx": "^2.2",
+    "psr/container": "^1.0",
     "reactivex/rxphp": "^2.0",
     "wyrihaximus/get-in-packages-composer.jason": "^1.0",
     "wyrihaximus/ticking-promise": "^1.6"

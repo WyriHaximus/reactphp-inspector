@@ -138,7 +138,11 @@ final class Metrics extends Subject implements MetricsStreamInterface
                 }
                 $fileName = $path . str_replace('/', '\\', $fileinfo->getFilename());
                 $class = $namespacePrefix . '\\' . substr(substr($fileName, strlen($path)), 0, -4);
-                if (class_exists($class) && !(new \ReflectionClass($class))->isInterface()) {
+                if (
+                    class_exists($class) &&
+                    is_subclass_of($class, CollectorInterface::class) &&
+                    !(new \ReflectionClass($class))->isInterface()
+                ) {
                     $this->collectors[] = $class;
                 }
             }
